@@ -6,6 +6,58 @@ use Illuminate\Http\Request;
 use App\Models\Precios;
 use App\Models\Supermercadoproducto;
 
+function getPage ($url)
+{
+
+
+    $useragent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.89 Safari/537.36';
+    $timeout= 120;
+    $dir            = dirname(__FILE__);
+    $cookie_file    = $dir . '/cookies/' . md5($_SERVER['REMOTE_ADDR']) . '.txt';
+
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_FAILONERROR, true);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    curl_setopt($ch, CURLOPT_COOKIEFILE, $cookie_file);
+    curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_file);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true );
+    curl_setopt($ch, CURLOPT_ENCODING, "" );
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true );
+    curl_setopt($ch, CURLOPT_AUTOREFERER, true );
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout );
+    curl_setopt($ch, CURLOPT_TIMEOUT, $timeout );
+    curl_setopt($ch, CURLOPT_MAXREDIRS, 10 );
+    curl_setopt($ch, CURLOPT_USERAGENT, $useragent);
+    curl_setopt($ch, CURLOPT_REFERER, 'http://www.google.com/');
+    $content = curl_exec($ch);
+    if(curl_errno($ch))
+    {
+        echo 'error:' . curl_error($ch);
+    }
+    else
+    {
+        return $content;
+    }
+        curl_close($ch);
+
+}
+
+
+function file_get_contents_curl($url)
+{
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+    curl_setopt($ch, CURLOPT_AUTOREFERER, true);
+    $data = curl_exec($ch);
+    curl_close($ch);
+    return $data;
+};
+
+
+
 class GuardaPreciosController extends Controller
 {
     public function mercadona()
@@ -20,7 +72,7 @@ class GuardaPreciosController extends Controller
                 {
                     if (($mercadona->scrab_id === NULL))
                     {
-                        echo "Mercadona: ". $mercadona->producto_id . " Precio no actualizado (No scrab_id)<br>";
+                        echo "Mercadona: ". $mercadona->descripcion . " Precio no actualizado (No scrab_id)<br>";
                     } else
                         {
                         $dataString = file_get_contents_curl("https://tienda.mercadona.es/api/v1_1/products/{$mercadona->scrab_id}/?lang=es&wh=mad1");
@@ -35,17 +87,17 @@ class GuardaPreciosController extends Controller
                                     "precio_kg" => $preciokilo
                                 ];
                                 Precios::create($atributos);
-                                echo "Mercadona ". $mercadona->producto_id . " actualizado.<br>";
+                                echo "Mercadona ". $mercadona->descripcion . " actualizado.<br>";
                                 }
                             else
                             {
-                                echo "Mercadona: ". $mercadona->producto_id . " no actualizado (Faltan datos).<br>";
+                                echo "Mercadona: ". $mercadona->descripcion . " no actualizado (Faltan datos).<br>";
                             }
                         }
                 }
                 else
                 {
-                    echo "Mercadona: ". $mercadona->producto_id . " Precio no actualizado (ya actual)<br>";
+                    echo "Mercadona: ". $mercadona->descripcion . " Precio no actualizado (ya actual)<br>";
                 }
 
             }
@@ -65,25 +117,25 @@ class GuardaPreciosController extends Controller
                 {
                     if (($carrefour->scrab_id === NULL))
                     {
-                        echo "Carrefour: ". $carrefour->producto_id ." Precio no actualizado (No scrab_id)<br>";
+                        echo "Carrefour: ". $carrefour->descripcion ." Precio no actualizado (No scrab_id)<br>";
                     } else {
                         $dataString = file_get_contents_curl("https://www.carrefour.es/cloud-api/pdp-food-analytics/v1/impressions?product_id={$carrefour->scrab_id}");
                         $dataArray = json_decode($dataString, true);
                         if (isset($dataArray['impressions']))
                         {
                             $precioProducto = $dataArray['impressions']['0']['price'];
-                            $precioK = ($precioProducto * $carrefour->peso)/ 1000;
+                            $precioK = ($precioProducto * 1000)/ $carrefour->peso;
                             $atributos = [
                                 "supermercadoproductos_id" => $carrefour->id,
                                 "precio" => $precioProducto,
                                 "precio_kg" => $precioK
                             ];
                             Precios::create($atributos);
-                            echo "Carrefour ". $carrefour->producto_id ." actualizado.<br>";
+                            echo "Carrefour ". $carrefour->descripcion ." actualizado.<br>";
                         }
                         else
                         {
-                            echo "Carrefour: ". $carrefour->producto_id ." no actualizado (Faltan datos).<br>";
+                            echo "Carrefour: ". $carrefour->descripcion ." no actualizado (Faltan datos).<br>";
                         }
 
                     }
@@ -91,7 +143,7 @@ class GuardaPreciosController extends Controller
                 }
                 else
                 {
-                    echo "Carrefour: ". $carrefour->producto_id ." Precio no actualizado (ya actual)<br>";
+                    echo "Carrefour: ". $carrefour->descripcion ." Precio no actualizado (ya actual)<br>";
                 }
 
             }
@@ -111,10 +163,11 @@ class GuardaPreciosController extends Controller
                 {
                     if (($eci->scrab_id === NULL))
                     {
-                        echo "ECI: ". $eci->producto_id ." Precio no actualizado (No scrab_id)<br>";
+                        echo "ECI: ". $eci->descripcion ." Precio no actualizado (No scrab_id)<br>";
                     } else {
                         $dataString = file_get_contents_curl("https://www.elcorteingles.es/alimentacion/api/catalog/get-rr-products/?ids={$eci->scrab_id}___&mode=JSON");
                         $dataArray = json_decode($dataString, true);
+
 
                         if(isset($dataArray['products_list']['items']['0']))
                         {
@@ -129,17 +182,17 @@ class GuardaPreciosController extends Controller
                                 "precio_kg" => $precioK
                             ];
                             Precios::create($atributos);
-                            echo "ECI ". $eci->producto_id ." actualizado.<br>";
+                            echo "ECI ". $eci->descripcion ." actualizado.<br>";
                         }
                         else
                         {
-                            echo "ECI: ". $eci->producto_id ." no actualizado (Faltan datos).<br>";
+                            echo "ECI: ". $eci->descripcion ." no actualizado (Faltan datos).<br>";
                         }
                             }
                 }
                 else
                 {
-                    echo "ECI: ". $eci->producto_id ." Precio no actualizado (ya actual)<br>";
+                    echo "ECI: ". $eci->descripcion ." Precio no actualizado (ya actual)<br>";
                 }
 
              }
@@ -159,31 +212,31 @@ class GuardaPreciosController extends Controller
                 {
                     if (($dia->scrab_id === NULL))
                     {
-                        echo "Dia: ".$dia->producto_id." Precio no actualizado (No scrab_id)<br>";
+                        echo "Dia: ".$dia->descripcion." Precio no actualizado (No scrab_id)<br>";
                     } else {
                         $dataString = file_get_contents_curl("https://www.dia.es/api/v1/pdp-insight/initial_analytics/{$dia->scrab_id}");
                         $dataArray = json_decode($dataString, true);
                         if(isset($dataArray['page_product_analytics']))
                         {
                             $precioProducto = $dataArray['page_product_analytics'][$dia->scrab_id]['price'];
-                            $precioK = ($precioProducto * $dia->peso)/ 1000;
+                            $precioK = ($precioProducto * 1000)/ $dia->peso;
                             $atributos = [
                                 "supermercadoproductos_id" => $dia->id,
                                 "precio" => $precioProducto,
                                 "precio_kg" => $precioK
                             ];
                             Precios::create($atributos);
-                            echo "Dia ".$dia->producto_id." actualizado.<br>";
+                            echo "Dia ".$dia->descripcion." actualizado.<br>";
                         }
                         else
                         {
-                            echo "Día: ".$dia->producto_id." no actualizado (Faltan datos).<br>";
+                            echo "Día: ".$dia->descripcion." no actualizado (Faltan datos).<br>";
                         }
                         }
                 }
                 else
                 {
-                    echo "Dia: ".$dia->producto_id." Precio no actualizado (ya actual)<br>";
+                    echo "Dia: ".$dia->descripcion." Precio no actualizado (ya actual)<br>";
                 }
 
              }
@@ -198,13 +251,14 @@ class GuardaPreciosController extends Controller
 
     foreach ($eroskis as $eroski)
             {
-                if ((empty($eroski->precios->last()->created_at)) or ($eroski->precios->last()->created_at < now()->subDay()))
+                if ((empty($eroski->precios->last()->created_at)) or ($eroski->precios->last()->created_at < now()->sub('minute', 5)))
                 {
                     if (($eroski->scrab_id === NULL))
                     {
-                        echo "Eroski: ".$eroski->producto_id." Precio no actualizado (No scrab_id)<br>";
+                        echo "Eroski: ".$eroski->descripcion." Precio no actualizado (No scrab_id)<br>";
                     } else {
-                        $html = file_get_contents ($eroski->scrab_id);
+                        $html = getPage ($eroski->scrab_id);
+
                         if(isset($html))
                         {
                             $start = stripos($html, '<!-- Description product -->');
@@ -215,24 +269,24 @@ class GuardaPreciosController extends Controller
                             $precio = substr($htmlSection, $precioStart, 4);
                             $precio = str_replace(",",".", $precio);
                             $precio = floatval($precio);
-                            $precioK = ($precio * $eroski->peso)/ 1000;
+                            $precioK = ($precio * 1000)/ $eroski->peso;
                             $atributos = [
                                 "supermercadoproductos_id" => $eroski->id,
                                 "precio" => $precio,
                                 "precio_kg" => $precioK
                             ];
                             Precios::create($atributos);
-                            echo "Eroski ".$eroski->producto_id." actualizado.<br>";
+                            echo "Eroski ".$eroski->descripcion." actualizado.<br>";
                         }
                         else
                         {
-                            echo "Eroski: ".$eroski->producto_id." no actualizado (Faltan datos).<br>";
+                            echo "Eroski: ".$eroski->descripcion." no actualizado (Faltan datos).<br>";
                         }
                     }
                 }
                 else
                 {
-                    echo "Eroski: ".$eroski->producto_id." Precio no actualizado (ya actual)<br>";
+                    echo "Eroski: ".$eroski->descripcion." Precio no actualizado (ya actual)<br>";
                 }
              }
     echo "<br> <a href='javascript:history.back()'> Volver Atrás</a>";
@@ -249,7 +303,7 @@ class GuardaPreciosController extends Controller
                 {
                     if (($alcampo->scrab_id === NULL))
                     {
-                        echo "Alcampo: ".$alcampo->producto_id." Precio no actualizado (No scrab_id)<br>";
+                        echo "Alcampo: ".$alcampo->descripcion." Precio no actualizado (No scrab_id)<br>";
                     }
                     else
                      {
@@ -266,16 +320,16 @@ class GuardaPreciosController extends Controller
                                 "precio_kg" =>$preciok
                             ];
                             Precios::create($atributos);
-                            echo "Alcampo ".$alcampo->producto_id." actualizado.<br>";
+                            echo "Alcampo ".$alcampo->descripcion." actualizado.<br>";
                         }
                         else
                         {
-                            echo "Alcampo: ".$alcampo->producto_id." Precio no actualizado (ya actual)<br>";
+                            echo "Alcampo: ".$alcampo->descripcion." Precio no actualizado (ya actual)<br>";
                         }
                     }
                 } else
                 {
-                    echo "Alcampo:".$alcampo->producto_id." Precio no actualizado (ya actual)<br>";
+                    echo "Alcampo:".$alcampo->descripcion." Precio no actualizado (ya actual)<br>";
                 }
              }
              echo "<br> <a href='javascript:history.back()'> Volver Atrás</a>";

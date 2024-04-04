@@ -19,10 +19,11 @@ return new class extends Migration
             $table->string('scrab_id')->nullable()->unique();
             $table->integer('peso')->nullable();
             $table->string('descripcion')->nullable();
+            $table->string('link')->nullable();
         });
     }
 
-    /**     
+    /**
      * Reverse the migrations.
      */
     public function down(): void

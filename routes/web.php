@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoriasController;
+use App\Http\Controllers\prueba;
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -27,18 +28,8 @@ use Illuminate\View\View;
 |
 */
 
-function file_get_contents_curl($url){
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_HEADER, 0);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-    curl_setopt($ch, CURLOPT_AUTOREFERER, false);
-    $data = curl_exec($ch);
-    curl_close($ch);
-    return $data;
-};
 
+Route::get('/prueba', [prueba::class, 'prueba'])->name('prueba');
 
 Route::get('/', function () {
     return view('home');
