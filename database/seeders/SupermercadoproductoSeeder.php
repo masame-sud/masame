@@ -362,9 +362,9 @@ $p10204 = DB::table("productos")->where("name","Pan integral menor 250 gr")->val
                     "supermercado_id"=> $eroski,
                     "img_url" => "https://supermercado.eroski.es/images/23467301.jpg",
                     "peso" => 210,
-                    "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/23467301-barra-integral-de-trigo-100-eroski-210-g/",
+                    "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/25629544-barra-integral-de-trigo-100-eroski-210-g/",
                     "descripcion" => "Barra integral de trigo 100% EROSKI",
-                    "link" => "https://supermercado.eroski.es/es/productdetail/23467301-barra-integral-de-trigo-100-eroski-210-g/"
+                    "link" => "https://supermercado.eroski.es/es/productdetail/25629544-barra-integral-de-trigo-100-eroski-210-g/"
                         ]);
                 DB::table("supermercadoproductos")->insert([
                     "producto_id" => $p10204,
@@ -474,9 +474,9 @@ $p10206 = DB::table("productos")->where("name","Pan integral mayor 250 gr")->val
                         "supermercado_id"=> $eroski,
                         "img_url" => "https://supermercado.eroski.es/images/23420037.jpg",
                         "peso" => 380,
-                        "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/23420037-hogaza-100-integral-eroski-380-g/",
+                        "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/2498655-hogaza-100-integral-eroski-380-g/",
                         "descripcion" => "Hogaza 100% integral EROSKI",
-                        "link" => "https://supermercado.eroski.es/es/productdetail/23420037-hogaza-100-integral-eroski-380-g/"
+                        "link" => "https://supermercado.eroski.es/es/productdetail/24948655-hogaza-100-integral-eroski-380-g/"
                             ]);
                     DB::table("supermercadoproductos")->insert([
                         "producto_id" => $p10206,
@@ -528,11 +528,11 @@ $p10207 = DB::table("productos")->where("name","Pan redondo")->value("id");
             DB::table("supermercadoproductos")->insert([
                 "producto_id" => $p10207,
                 "supermercado_id"=> $eroski,
-                "img_url" => "https://supermercado.eroski.es/images/14707244.jpg",
+                "img_url" => NULL,
                 "peso" => 800,
-                "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/14707244-pan-de-pueblo-eroski-800-g/",
-                "descripcion" => "Pan de pueblo EROSKI",
-                "link" => "https://supermercado.eroski.es/es/productdetail/14707244-pan-de-pueblo-eroski-800-g/"
+                "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/24605107-pan-de-pueblo-panusa-800-g/",
+                "descripcion" => "Pan de pueblo PANUSA",
+                "link" => "https://supermercado.eroski.es/es/productdetail/24605107-pan-de-pueblo-panusa-800-g/"
                     ]);
             DB::table("supermercadoproductos")->insert([
                 "producto_id" => $p10207,
@@ -810,7 +810,7 @@ $p10301 = DB::table("productos")->where("name","Espirales 3 sabores")->value("id
                 "supermercado_id"=> $eroski,
                 "img_url" => "https://supermercado.eroski.es/images/2685899.jpg",
                 "peso" => 500,
-                "scrab_id"=> "https://supermercado.eroski.es/es/2685899-espirales-con-vegetales-eroski-paquete-500-g/",
+                "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/2685899-espirales-con-vegetales-eroski-paquete-500-g/",
                 "descripcion" => "Espirales con vegetales",
                 "link" => "https://supermercado.eroski.es/es/productdetail/2685899-espirales-con-vegetales-eroski-paquete-500-g/"
                     ]);
@@ -1315,9 +1315,9 @@ $p20101 = DB::table("productos")->where("name","Solomillo de ternera")->value("i
                 "supermercado_id"=> $eroski,
                 "img_url" => "https://supermercado.eroski.es/images/10425106_x.jpg",
                 "peso" => 500,
-                "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/10425106-solomillo-de-ternera-gallega-al-corte-compra-minima-500-g/",
+                "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/14803498-solomillo-ternera-euskal-okela-enatur-al-corte-compra-minima-500-g/",
                 "descripcion" => "Solomillo de Ternera Gallega",
-                "link" => "https://supermercado.eroski.es/es/productdetail/10425106-solomillo-de-ternera-gallega-al-corte-compra-minima-500-g/",
+                "link" => "https://supermercado.eroski.es/es/productdetail/14803498-solomillo-ternera-euskal-okela-enatur-al-corte-compra-minima-500-g/",
                     ]);
             DB::table("supermercadoproductos")->insert([
                 "producto_id" => $p20101,
@@ -1378,11 +1378,11 @@ $p20102 = DB::table("productos")->where("name","Chuletón de ternera")->value("i
             DB::table("supermercadoproductos")->insert([
                 "producto_id" => $p20102,
                 "supermercado_id"=> $eroski,
-                "img_url" => "https://supermercado.eroski.es/images/17624263_x.jpg",
+                "img_url" => "https://supermercado.eroski.es/images/16810848_x.jpg",
                 "peso" => 500,
-                "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/17624263-chuleta-deshu-ternera-e-okela-enatur-al-corte-compra-minima-500-g/",
+                "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/16810848-chuleta-de-ternera-euskal-okela-eroski-natur-bandeja-aprox-600-g/",
                 "descripcion" => "Chuleta deshu. Ternera E. OKELA",
-                "link" => "https://supermercado.eroski.es/es/productdetail/17624263-chuleta-deshu-ternera-e-okela-enatur-al-corte-compra-minima-500-g/",
+                "link" => "https://supermercado.eroski.es/es/productdetail/16810848-chuleta-de-ternera-euskal-okela-eroski-natur-bandeja-aprox-600-g/",
                     ]);
             DB::table("supermercadoproductos")->insert([
                 "producto_id" => $p20102,
@@ -1407,11 +1407,11 @@ $p20103 = DB::table("productos")->where("name","Entrecot de ternera")->value("id
             DB::table("supermercadoproductos")->insert([
                 "producto_id"=> $p20103,
                 "supermercado_id"=> $carrefour,
-                "img_url" => "https://static.carrefour.es/hd_510x_/img_pim_food/126668_00_1.jpg",
+                "img_url" => "https://static.carrefour.es/hd_510x_/img_pim_food/842661_00_1.jpg",
                 "peso" => 500,
-                "scrab_id"=> "R-prod1070085",
+                "scrab_id"=> "R-prod840026",
                 "descripcion" => "Entrecot de añojo Calidad y Origen Carrefour",
-                "link" => "https://www.carrefour.es/supermercado/entrecot-de-anojo-calidad-y-origen-carrefour-500-g-aprox/R-prod1070085/p"
+                "link" => "https://www.carrefour.es/supermercado/entrecot-lomo-de-anojo-calidad-y-origen-carrefour-500-g-aprox/R-prod840026/p"
                 ]);
             DB::table("supermercadoproductos")->insert([
                 "producto_id"=> $p20103,
@@ -1463,11 +1463,11 @@ $p20104 = DB::table("productos")->where("name","Tacos para estofado")->value("id
             DB::table("supermercadoproductos")->insert([
                 "producto_id"=> $p20104,
                 "supermercado_id"=> $carrefour,
-                "img_url" => "https://static.carrefour.es/hd_510x_/img_pim_food/133601_00_2.jpg",
+                "img_url" => "https://static.carrefour.es/hd_510x_/img_pim_food/842673_00_1.jpg",
                 "peso" => 500,
-                "scrab_id"=> "R-VC4AECOMM-133601",
-                "descripcion" => "Estofado de Vacuno ",
-                "link" => "https://www.carrefour.es/supermercado/estofado-de-vacuno-carrefour-el-mercado-500-g-aprox/R-VC4AECOMM-133601/p"
+                "scrab_id"=> "R-prod840073",
+                "descripcion" => "Estofado de añojo ",
+                "link" => "https://www.carrefour.es/supermercado/estofado-de-anojo-calidad-y-origen-carrefour-500-g-aprox/R-prod840073/p"
                 ]);
             DB::table("supermercadoproductos")->insert([
                 "producto_id"=> $p20104,
@@ -1911,11 +1911,11 @@ $p20301 = DB::table("productos")->where("name","Chuletas de cordero")->value("id
         DB::table("supermercadoproductos")->insert([
             "producto_id"=> $p20301,
             "supermercado_id"=> $carrefour,
-            "img_url" => "https://static.carrefour.es/hd_510x_/img_pim_food/625983_00_1.jpg",
-            "peso" => 600,
-            "scrab_id"=> "R-VC4AECOMM-625983",
-            "descripcion" => "Chuletillas de Cordero lechal",
-            "link" => "https://www.carrefour.es/supermercado/chuletillas-de-cordero-lechal-el-mercado-600-g-aprox/R-VC4AECOMM-625983/p",
+            "img_url" => "https://static.carrefour.es/hd_510x_/img_pim_food/625984_00_1.jpg",
+            "peso" => 400,
+            "scrab_id"=> "R-VC4AECOMM-625984",
+            "descripcion" => "Chuletas de Cordero MAMA CORDERO",
+            "link" => "https://www.carrefour.es/supermercado/chuletas-de-cordero-mama-cordero-045-kg-065-kg/R-VC4AECOMM-625984/p",
             ]);
         DB::table("supermercadoproductos")->insert([
             "producto_id"=> $p20301,
@@ -1940,9 +1940,9 @@ $p20301 = DB::table("productos")->where("name","Chuletas de cordero")->value("id
             "supermercado_id"=> $eroski,
             "img_url" => "https://supermercado.eroski.es/images/7051352_x.jpg",
             "peso" => 500,
-            "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/7051352-chuletillas-de-cordero-gales-bandeja-aprox-500-g/",
-            "descripcion" => "Chuletillas de cordero galés",
-            "link" => "https://supermercado.eroski.es/es/productdetail/7051352-chuletillas-de-cordero-gales-bandeja-aprox-500-g/",
+            "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/5018221-chuletillas-de-cordero-eroski-bandeja-aprox-500-g/",
+            "descripcion" => "Chuletillas de cordero",
+            "link" => "https://supermercado.eroski.es/es/productdetail/5018221-chuletillas-de-cordero-eroski-bandeja-aprox-500-g/",
                 ]);
         DB::table("supermercadoproductos")->insert([
             "producto_id" => $p20301,
@@ -3375,9 +3375,9 @@ $p30102 = DB::table("productos")->where("name","Bacalao")->value("id");
                 "supermercado_id"=> $carrefour,
                 "img_url" => "https://static.carrefour.es/hd_510x_/img_pim_food/089919_00_aca02c5_1.jpg",
                 "peso" => 3000,
-                "scrab_id"=> "R-prod1010186",
+                "scrab_id"=> "R-693806541",
                 "descripcion" => "Bacalao Skrei Circulo de Calidad",
-                "link" => "https://www.carrefour.es/supermercado/bacalao-skrei-circulo-de-calidad-3-kg-aprox/R-prod1010186/p",
+                "link" => "https://www.carrefour.es/supermercado/bacalao-skrei-3-kg-aprox/R-693806541/p",
                 ]);
             DB::table("supermercadoproductos")->insert([
                 "producto_id"=> $p30102,
@@ -3512,11 +3512,11 @@ $p30104 = DB::table("productos")->where("name","Rape")->value("id");
             DB::table("supermercadoproductos")->insert([
                 "producto_id" => $p30104,
                 "supermercado_id"=> $eroski,
-                "img_url" => "https://supermercado.eroski.es/images/835744_x.jpg",
-                "peso" => 2500,
-                "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/835744-rape-entero-y-limpio-al-peso-compra-minima-25-kg/",
+                "img_url" => "https://supermercado.eroski.es/images/14631592_x.jpg",
+                "peso" => 1600,
+                "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/14631592-rape-negro-del-pais-vasco-pieza-al-peso-aprox-16-kg/",
                 "descripcion" => "Rape entero y limpio",
-                "link" => "https://supermercado.eroski.es/es/productdetail/835744-rape-entero-y-limpio-al-peso-compra-minima-25-kg/",
+                "link" => "https://supermercado.eroski.es/es/productdetail/14631592-rape-negro-del-pais-vasco-pieza-al-peso-aprox-16-kg/",
                     ]);
             DB::table("supermercadoproductos")->insert([
                 "producto_id" => $p30104,
@@ -3737,11 +3737,11 @@ $p30108 = DB::table("productos")->where("name","Merluza")->value("id");
             DB::table("supermercadoproductos")->insert([
                 "producto_id" => $p30108,
                 "supermercado_id"=> $eroski,
-                "img_url" => "https://supermercado.eroski.es/images/226175_x.jpg",
+                "img_url" => "https://supermercado.eroski.es/images/13923156.jpg",
                 "peso" => 1500,
-                "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/226175-merluza-entera-pieza-al-peso-aprox-15-kg/",
+                "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/13923156-merluza-pieza-al-peso-aprox-15-kg/",
                 "descripcion" => "Merluza entera",
-                "link" => "https://supermercado.eroski.es/es/productdetail/226175-merluza-entera-pieza-al-peso-aprox-15-kg/",
+                "link" => "https://supermercado.eroski.es/es/productdetail/13923156-merluza-pieza-al-peso-aprox-15-kg/",
                     ]);
             DB::table("supermercadoproductos")->insert([
                 "producto_id" => $p30108,
@@ -3963,7 +3963,7 @@ $p30112 = DB::table("productos")->where("name","Trucha")->value("id");
                     "supermercado_id"=> $eroski,
                     "img_url" => "https://supermercado.eroski.es/images/9717067.jpg",
                     "peso" => 500,
-                    "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/222836-filete-de-trucha-asalmonada-al-peso-compra-minima-500-g/",
+                    "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/9717067-trucha-asalmonada-eviscerada-pieza-aprox-600-g/",
                     "descripcion" => "Trucha asalmonada eviscerada",
                     "link" => "https://supermercado.eroski.es/es/productdetail/9717067-trucha-asalmonada-eviscerada-pieza-aprox-600-g/",
                         ]);
@@ -4073,11 +4073,11 @@ $p30201 = DB::table("productos")->where("name","Atún en rodajas")->value("id");
             DB::table("supermercadoproductos")->insert([
                 "producto_id" => $p30201,
                 "supermercado_id"=> $eroski,
-                "img_url" => "https://supermercado.eroski.es/images/25251760_x.jpg",
+                "img_url" => "https://supermercado.eroski.es/images/16463358_x.jpg",
                 "peso" => 225,
-                "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/25251760-filetes-de-atun-msc-la-sirena-bandeja-225-g/",
+                "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/16463358-filete-de-atun-campos-caja-225-g/",
                 "descripcion" => "Filetes de atún MSC",
-                "link" => "https://supermercado.eroski.es/es/productdetail/25251760-filetes-de-atun-msc-la-sirena-bandeja-225-g/",
+                "link" => "https://supermercado.eroski.es/es/productdetail/16463358-filete-de-atun-campos-caja-225-g/",
                     ]);
             DB::table("supermercadoproductos")->insert([
                 "producto_id" => $p30201,
@@ -4550,11 +4550,11 @@ $p30210 = DB::table("productos")->where("name","Langostino crudo")->value("id");
             DB::table("supermercadoproductos")->insert([
                 "producto_id"=> $p30210,
                 "supermercado_id"=> $carrefour,
-                "img_url" => "https://static.carrefour.es/hd_510x_/img_pim_food/897193_00_1.jpg",
+                "img_url" => "https://static.carrefour.es/hd_510x_/img_pim_food/799826_00_1.jpg",
                 "peso" => 800,
-                "scrab_id"=> "R-803482471",
+                "scrab_id"=> "R-521031182",
                 "descripcion" => "Langostino crudo",
-                "link" => "https://www.carrefour.es/supermercado/langostino-crudo-congelado-800-g/R-803482471/p",
+                "link" => "https://www.carrefour.es/supermercado/langostino-crudo-carrefour-800-g/R-521031182/p",
                 ]);
             DB::table("supermercadoproductos")->insert([
                 "producto_id"=> $p30210,
@@ -4832,11 +4832,16 @@ $p30304 = DB::table("productos")->where("name","Mejillones")->value("id");
             DB::table("supermercadoproductos")->insert([
                 "producto_id"=> $p30304,
                 "supermercado_id"=> $carrefour,
-                "img_url" => "https://static.carrefour.es/hd_510x_/img_pim_food/960710_00_1.jpg",
-                "peso" => 1000,
-                "scrab_id"=> "R-826601274",
-                "descripcion" => "Mejillón vivo fresco AGUINAMAR",
-                "link" => "https://www.carrefour.es/supermercado/mejillon-vivo-fresco-gourmet-ecologico-aguinamar-1-kg/R-826601274/p",
+                "img_url" => NULL,
+                "peso" => NULL,
+                "scrab_id"=> NULL,
+                "descripcion" => NULL,
+                "link" => NULL,
+                // "img_url" => "https://static.carrefour.es/hd_510x_/img_pim_food/960710_00_1.jpg",
+                // "peso" => 1000,
+                // "scrab_id"=> "R-826601274",
+                // "descripcion" => "Mejillón vivo fresco AGUINAMAR",
+                // "link" => "https://www.carrefour.es/supermercado/mejillon-vivo-fresco-gourmet-ecologico-aguinamar-1-kg/R-826601274/p",
                 ]);
             DB::table("supermercadoproductos")->insert([
                 "producto_id"=> $p30304,
@@ -5582,7 +5587,7 @@ $p40204 = DB::table("productos")->where("name","Natillas")->value("id");
                 "supermercado_id"=> $dia,
                 "img_url" => "https://www.dia.es/product_images/129000/129000_ISO_0_ES.jpg",
                 "peso" =>  750,
-                "scrab_id"=> "12900",
+                "scrab_id"=> "129000",
                 "descripcion" => "Natillas de vainilla pack 6",
                 "link" => "https://www.dia.es/yogures-y-postres/natillas-y-flan/p/129000",
                 ]);
@@ -6095,7 +6100,7 @@ $p40401 = DB::table("productos")->where("name","Huevos M")->value("id");
                 "supermercado_id"=> $eroski,
                 "img_url" => "https://supermercado.eroski.es/images/19482116_x.jpg",
                 "peso" => 12,
-                "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/17080961-huevo-fresco-m-pais-vasco-eroski-carton-12-uds/",
+                "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/19482116-huevo-fresco-m-suelo-eroski-carton-1-docena/",
                 "descripcion" => "Huevos medianos de gallina suelo",
                 "link" => "https://supermercado.eroski.es/es/productdetail/19482116-huevo-fresco-m-suelo-eroski-carton-1-docena/",
                     ]);
@@ -6571,10 +6576,10 @@ $p60101 = DB::table("productos")->where("name","Limones")->value("id");
                         "producto_id"=> $p60101,
                         "supermercado_id"=> $carrefour,
                         "img_url"=> "https://static.carrefour.es/hd_510x_/img_pim_food/198883_00_1.jpg",
-                        "peso" => 1500,
-                        "scrab_id"=> "R-VC4AECOMM-198883",
+                        "peso" => 1000,
+                        "scrab_id"=> "R-536500245",
                         "descripcion" => "Limones SIMPLY",
-                        "link" => "https://www.carrefour.es/supermercado/limon-simply-15-kg/R-VC4AECOMM-198883/p",
+                        "link" => "https://www.carrefour.es/supermercado/limon-simply-1-kg/R-536500245/p",
                         ]);
                     DB::table("supermercadoproductos")->insert([
                         "producto_id"=> $p60101,
@@ -7045,11 +7050,11 @@ $p60402 = DB::table("productos")->where("name","Ercolina")->value("id");
                     DB::table("supermercadoproductos")->insert([
                         "producto_id" => $p60402,
                         "supermercado_id"=> $eroski,
-                        "img_url" => "https://supermercado.eroski.es/images/16337_x.jpg",
+                        "img_url" => "https://supermercado.eroski.es/images/16576_x.jpg",
                         "peso" => 1000,
-                        "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/16337-pera-blanquilla-al-peso-compra-minima-1-kg/",
-                        "descripcion" => "Pera blanquilla / Ercolini",
-                        "link" => "https://supermercado.eroski.es/es/productdetail/16337-pera-blanquilla-al-peso-compra-minima-1-kg/",
+                        "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/16576-pera-ercolini-al-peso-compra-minima-1-kg/",
+                        "descripcion" => "Pera blanquilla / Ercolina",
+                        "link" => "https://supermercado.eroski.es/es/productdetail/16576-pera-ercolini-al-peso-compra-minima-1-kg/",
                             ]);
                     DB::table("supermercadoproductos")->insert([
                         "producto_id" => $p60402,
@@ -7235,9 +7240,9 @@ $p60602 = DB::table("productos")->where("name","Negra")->value("id");
                         "supermercado_id"=> $mercadona,
                         "img_url" => "https://prod-mercadona.imgix.net/images/f35c5eb1937f554893c9c6f005b7eb49.jpg",
                         "peso" =>  150,
-                        "scrab_id"=> "33249",
+                        "scrab_id"=> "52734",
                         "descripcion" => "Aceitunas negras deshuesadas",
-                        "link" => "https://tienda.mercadona.es/product/33249/aceitunas-negras-hacendado-sin-hueso-bote",
+                        "link" => "https://tienda.mercadona.es/product/52734/aceitunas-negras-hacendado-sin-hueso-bote",
                         ]);
                     DB::table("supermercadoproductos")->insert([
                         "producto_id"=> $p60602,
@@ -8502,11 +8507,11 @@ $p70202 = DB::table("productos")->where("name","Calabacin")->value("id");
                     DB::table("supermercadoproductos")->insert([
                         "producto_id" => $p70202,
                         "supermercado_id"=> $eroski,
-                        "img_url" => "https://supermercado.eroski.es/images/13343363_x.jpg",
-                        "peso" => 375,
-                        "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/13343363-calabacin-verde-al-peso-compra-minima-375-g/",
+                        "img_url" => "https://supermercado.eroski.es/images/90712_x.jpg",
+                        "peso" => 500,
+                        "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/90712-calabacin-verde-al-peso-compra-minima-500-g/",
                         "descripcion" => "Calabacin verde",
-                        "link" => "https://supermercado.eroski.es/es/productdetail/13343363-calabacin-verde-al-peso-compra-minima-375-g/",
+                        "link" => "https://supermercado.eroski.es/es/productdetail/90712-calabacin-verde-al-peso-compra-minima-500-g/",
                             ]);
                     DB::table("supermercadoproductos")->insert([
                         "producto_id" => $p70202,
@@ -8614,11 +8619,11 @@ $p70204 = DB::table("productos")->where("name","Pepino")->value("id");
                     DB::table("supermercadoproductos")->insert([
                         "producto_id" => $p70204,
                         "supermercado_id"=> $eroski,
-                        "img_url" => "https://supermercado.eroski.es/images/13343470.jpg",
+                        "img_url" => "https://supermercado.eroski.es/images/90514.jpg",
                         "peso" => 500,
-                        "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/13343470-pepino-negro-al-peso-compra-minima-500-g/",
+                        "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/90514-pepino-negro-al-peso-compra-minima-500-g/",
                         "descripcion" => "Pepino",
-                        "link" => "https://supermercado.eroski.es/es/productdetail/13343470-pepino-negro-al-peso-compra-minima-500-g/",
+                        "link" => "https://supermercado.eroski.es/es/productdetail/90514-pepino-negro-al-peso-compra-minima-500-g/",
                             ]);
                     DB::table("supermercadoproductos")->insert([
                         "producto_id" => $p70204,
@@ -8643,11 +8648,16 @@ $p70205 = DB::table("productos")->where("name","Pimiento verde freir")->value("i
                     DB::table("supermercadoproductos")->insert([
                         "producto_id"=> $p70205,
                         "supermercado_id"=> $carrefour,
-                        "img_url" => "https://static.carrefour.es/hd_510x_/img_pim_food/050257_00_1.jpg",
-                        "peso" => 1000,
-                        "scrab_id"=> "R-536001616",
-                        "descripcion" => "Pimiento verde",
-                        "link" => "https://www.carrefour.es/supermercado/pimiento-verde-italiano-1-kg-aprox/R-536001616/p",
+                        "img_url" => NULL,
+                        "peso" => NULL,
+                        "scrab_id"=> NULL,
+                        "descripcion" => NULL,
+                        "link" => NULL,
+                        // "img_url" => "https://static.carrefour.es/hd_510x_/img_pim_food/050257_00_1.jpg",
+                        // "peso" => 1000,
+                        // "scrab_id"=> "R-536001616",
+                        // "descripcion" => "Pimiento verde",
+                        // "link" => "https://www.carrefour.es/supermercado/pimiento-verde-italiano-1-kg-aprox/R-536001616/p",
                         ]);
                     DB::table("supermercadoproductos")->insert([
                         "producto_id"=> $p70205,
@@ -8670,11 +8680,11 @@ $p70205 = DB::table("productos")->where("name","Pimiento verde freir")->value("i
                     DB::table("supermercadoproductos")->insert([
                         "producto_id" => $p70205,
                         "supermercado_id"=> $eroski,
-                        "img_url" => "https://supermercado.eroski.es/images/13338652_x.jpg",
+                        "img_url" => "https://supermercado.eroski.es/images/1867.jpg",
                         "peso" => 500,
-                        "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/13338652-pimiento-verde-lamuyo-al-peso-compra-minima-500-g/",
+                        "scrab_id"=> "https://supermercado.eroski.es/es/productdetail/1867-pimiento-verde-italiano-al-peso-compra-minima-500-g/",
                         "descripcion" => "Pimiento verde",
-                        "link" => "https://supermercado.eroski.es/es/productdetail/13338652-pimiento-verde-lamuyo-al-peso-compra-minima-500-g/",
+                        "link" => "https://supermercado.eroski.es/es/productdetail/1867-pimiento-verde-italiano-al-peso-compra-minima-500-g/",
                             ]);
                     DB::table("supermercadoproductos")->insert([
                         "producto_id" => $p70205,
@@ -8782,12 +8792,11 @@ $p70302 = DB::table("productos")->where("name","Setas")->value("id");
                     DB::table("supermercadoproductos")->insert([
                         "producto_id" => $p70302,
                         "supermercado_id"=> $eroski,
-                        "img_url" => "",
                         "img_url" => NULL,
                         "peso" => NULL,
                         "scrab_id"=> NULL,
                         "descripcion" => NULL,
-                        "link" => NULL
+                        "link" => NULL,
                             ]);
                     DB::table("supermercadoproductos")->insert([
                         "producto_id" => $p70302,
@@ -8830,11 +8839,16 @@ $p70401 = DB::table("productos")->where("name","Alubia blanca")->value("id");
                     DB::table("supermercadoproductos")->insert([
                         "producto_id"=> $p70401,
                         "supermercado_id"=> $dia,
-                        "img_url" => "https://www.dia.es/product_images/154/154_ISO_0_ES.jpg",
-                        "peso" =>  1000,
-                        "scrab_id"=> "154",
-                        "descripcion" => "Alubia blanca seca",
-                        "link" => "https://www.dia.es/arroz-pastas-y-legumbres/alubias/p/154",
+                        "img_url" => NULL,
+                        "peso" => NULL,
+                        "scrab_id"=> NULL,
+                        "descripcion" => NULL,
+                        "link" => NULL,
+                        // "img_url" => "https://www.dia.es/product_images/154/154_ISO_0_ES.jpg",
+                        // "peso" =>  1000,
+                        // "scrab_id"=> "154",
+                        // "descripcion" => "Alubia blanca seca",
+                        // "link" => "https://www.dia.es/arroz-pastas-y-legumbres/alubias/p/154",
                         ]);
                     DB::table("supermercadoproductos")->insert([
                         "producto_id" => $p70401,
